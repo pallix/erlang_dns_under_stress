@@ -26,7 +26,7 @@ defmodule ErlangDns do
   end
 
   def send_messages(pid) do
-    for _ <- 1..200_000 do
+    for _ <- 1..4_000_000 do
       send(pid, {:ping, self()})
     end
     Process.sleep(10)
